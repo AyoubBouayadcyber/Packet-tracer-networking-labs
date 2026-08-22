@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ALTEN IT Service Portal</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; background-color: #f4f6f8; color: #2c2c2c; }
+  
+  .navbar {
+    background-color: #002855;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar h1 { font-size: 20px; }
+  .navbar span { font-size: 13px; color: #a9c4e0; }
+
+  .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+
+  .banner {
+    background-color: #0052a3;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+  }
+  .banner h2 { font-size: 22px; margin-bottom: 5px; }
+  .banner p { font-size: 13px; color: #cfe0f2; }
+
+  .card {
+    background: white;
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+  .card h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #002855;
+    border-bottom: 2px solid #0052a3;
+    padding-bottom: 8px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    color: #444;
+  }
+  select, input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  textarea { resize: vertical; min-height: 80px; }
+
+  .priority-high { color: #c0392b; font-weight: bold; }
+  .priority-medium { color: #e67e22; font-weight: bold; }
+  .priority-low { color: #27ae60; font-weight: bold; }
+
+  .btn {
+    background-color: #0052a3;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 18px;
+    cursor: pointer;
+  }
+  .btn:hover { background-color: #003d7a; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  th { background-color: #f0f3f7; color: #002855; }
+
+  .status-open { color: #c0392b; font-weight: bold; }
+  .status-progress { color: #e67e22; font-weight: bold; }
+  .status-resolved { color: #27ae60; font-weight: bold; }
+
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin: 30px 0;
+  }
+</style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>ALTEN — IT Service Portal</h1>
+    <span>Plateau Support Fès | Connected Site: Toulouse / Boulogne</span>
+  </div>
+
+  <div class="container">
+
+    <div class="banner">
+      <h2>Incident Management System</h2>
+      <p>Submit and track IT incidents across ALTEN sites — Fès, Toulouse, Boulogne</p>
+    </div>
+
+    <div class="card">
+      <h3>Submit New Incident</h3>
+      <form>
+        <label>Requesting Site</label>
+        <select>
+          <option>ALTEN Fès</option>
+          <option>ALTEN Toulouse</option>
+          <option>ALTEN Boulogne</option>
+        </select>
+
+        <label>Department / Plateau</label>
+        <select>
+          <option>IT Support</option>
+          <option>Réseau Local</option>
+          <option>Développement</option>
+        </select>
+
+        <label>Priority</label>
+        <select>
+          <option class="priority-high">P1 - Critical</option>
+          <option class="priority-medium">P2 - High</option>
+          <option class="priority-low">P3 - Normal</option>
+        </select>
+
+        <label>Category</label>
+        <select>
+          <option>Network Connectivity</option>
+          <option>Hardware Failure</option>
+          <option>Software / Application</option>
+          <option>Access & Permissions</option>
+          <option>Server / Infrastructure</option>
+        </select>
+
+        <label>Description</label>
+        <textarea placeholder="Describe the incident in detail..."></textarea>
+
+        <button type="button" class="btn">Submit Ticket</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Recent Tickets — Cross-Site Overview</h3>
+      <table>
+        <tr>
+          <th>Ticket ID</th>
+          <th>Site</th>
+          <th>Category</th>
+          <th>Priority</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>INC-1042</td>
+          <td>Toulouse</td>
+          <td>Network Connectivity</td>
+          <td class="priority-high">P1</td>
+          <td class="status-open">Open</td>
+        </tr>
+        <tr>
+          <td>INC-1041</td>
+          <td>Boulogne</td>
+          <td>Hardware Failure</td>
+          <td class="priority-medium">P2</td>
+          <td class="status-progress">In Progress</td>
+        </tr>
+        <tr>
+          <td>INC-1039</td>
+          <td>Fès - Développement</td>
+          <td>Software / Application</td>
+          <td class="priority-low">P3</td>
+          <td class="status-resolved">Resolved</td>
+        </tr>
+        <tr>
+          <td>INC-1037</td>
+          <td>Toulouse</td>
+          <td>Access & Permissions</td>
+          <td class="priority-medium">P2</td>
+          <td class="status-resolved">Resolved</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    ALTEN Global Network Simulation — Internal Lab Environment<br>
+    Fès IT Support Plateau
+  </div>
+
+</body>
+</html>
